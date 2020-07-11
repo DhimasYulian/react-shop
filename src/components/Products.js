@@ -10,9 +10,9 @@ class Products extends Component {
                             <div className="product">
                                 <a href={`#${product._id}`}>
                                     <img src={product.image} alt={product.title} />
-                                    <h2>
+                                    <h3>
                                         {product.title}
-                                    </h2>
+                                    </h3>
                                 </a>
                                 <div className="product-price">
                                     <div>{`$ ${product.price}`}</div>

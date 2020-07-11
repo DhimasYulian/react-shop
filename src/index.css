@@ -95,7 +95,7 @@ footer {
 
 .products li {
   flex: 0 1 15rem;
-  height: 33rem;
+  height: 31rem;
   padding: 30px 20px;
 }
 
@@ -144,4 +144,17 @@ footer {
   background-color: #f0c040;
   color: white;
   transition: all 0.2s ease-in-out;
+}
+
+/* Filter */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+
+.filter div {
+  flex: 1;
 }
