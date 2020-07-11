@@ -3,6 +3,7 @@ import './App.css';
 import data from './data.json'
 import Products from './components/Products';
 import Filter from './components/Filter';
+import Cart from './components/Cart';
 
 class App extends Component {
   constructor() {
@@ -10,8 +11,31 @@ class App extends Component {
     this.state = {
       products: data.products,
       size: "",
-      sort: ""
+      sort: "",
+      cartItems: []
     }
+  }
+  removeItem = (item) => {
+    const cartItems = this.state.cartItems.slice();
+    this.setState({
+      cartItems: cartItems.filter(x => x._id !== item._id)
+    })
+  }
+  addTocart = (product) => {
+    const cartItems = this.state.cartItems.slice();
+    let alreadyIncart = false;
+    cartItems.forEach(item => {
+      if (item._id === product._id) {
+        item.count++;
+        alreadyIncart = true;
+      }
+    })
+    if (!alreadyIncart) {
+      cartItems.push({ ...product, count: 1 })
+    }
+    this.setState({
+      cartItems: cartItems
+    })
   }
   sortProduct = (e) => {
     const sort = e.target.value;
@@ -56,10 +80,10 @@ class App extends Component {
           <div className="content">
             <div className="main">
               <Filter count={this.state.products.length} sort={this.state.sort} size={this.state.size} filterProduct={this.filterProduct} sortProduct={this.sortProduct} />
-              <Products products={this.state.products} />
+              <Products products={this.state.products} addToCart={this.addTocart} />
             </div>
             <div className="side">
-              Side
+              <Cart cartItems={this.state.cartItems} removeItem={this.removeItem} />
             </div>
           </div>
         </main>

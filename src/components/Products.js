@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 class Products extends Component {
     render() {
+        const { addToCart } = this.props;
         return (
             <div>
                 <ul className="products">
@@ -16,7 +17,7 @@ class Products extends Component {
                                 </a>
                                 <div className="product-price">
                                     <div>{`$ ${product.price}`}</div>
-                                    <button className="button primary">Add To Cart</button>
+                                    <button className="button primary" onClick={() => addToCart(product)} >Add To Cart</button>
                                 </div>
                             </div>
                         </li>
