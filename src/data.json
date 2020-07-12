@@ -3,7 +3,7 @@
             "_id": 1,
             "title": "Product One",
             "image": "/images/dress1.jpg",
-            "description": "This is product One",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nobis animi aperiam, eos ipsam quam necessitatibus ullam laudantium explicabo dolore repellat, assumenda ad ut voluptatibus.",
             "price": 10,
             "availableSize": ["L", "XL", "XXL"]
         },
@@ -11,7 +11,7 @@
             "_id": 2,
             "title": "Product Two",
             "image": "/images/dress2.jpg",
-            "description": "This is product two",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nobis animi aperiam, eos ipsam quam necessitatibus ullam laudantium explicabo dolore repellat, assumenda ad ut voluptatibus.",
             "price": 20,
             "availableSize": ["L", "XL", "M"]
         },
@@ -19,7 +19,7 @@
             "_id": 3,
             "title": "Product Three",
             "image": "/images/dress3.jpg",
-            "description": "This is product three",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nobis animi aperiam, eos ipsam quam necessitatibus ullam laudantium explicabo dolore repellat, assumenda ad ut voluptatibus.",
             "price": 45,
             "availableSize": ["L", "XL", "XXL"]
         },
@@ -27,7 +27,7 @@
             "_id": 4,
             "title": "Product four",
             "image": "/images/dress4.jpg",
-            "description": "This is product four",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nobis animi aperiam, eos ipsam quam necessitatibus ullam laudantium explicabo dolore repellat, assumenda ad ut voluptatibus.",
             "price": 15,
             "availableSize": ["L", "XXL"]
         },
@@ -35,7 +35,7 @@
             "_id": 5,
             "title": "Product five",
             "image": "/images/dress5.jpg",
-            "description": "This is product five",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nobis animi aperiam, eos ipsam quam necessitatibus ullam laudantium explicabo dolore repellat, assumenda ad ut voluptatibus.",
             "price": 25,
             "availableSize": ["L", "XL"]
         },
@@ -43,7 +43,7 @@
             "_id": 6,
             "title": "Product Six",
             "image": "/images/dress6.jpg",
-            "description": "This is product six",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi nobis animi aperiam, eos ipsam quam necessitatibus ullam laudantium explicabo dolore repellat, assumenda ad ut voluptatibus.",
             "price": 50,
             "availableSize": ["M", "S"]
         }
