@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import './App.css';
-import data from './data.json'
 import Products from './components/Products';
 import Filter from './components/Filter';
 import Cart from './components/Cart';
@@ -11,9 +9,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      products: data.products,
-      size: "",
-      sort: "",
       cartItems: JSON.parse(localStorage.getItem("cartItems")) ? JSON.parse(localStorage.getItem("cartItems")) : []
     }
   }
@@ -45,39 +40,39 @@ class App extends Component {
     })
     localStorage.setItem("cartItems", JSON.stringify(cartItems))
   }
-  sortProduct = (e) => {
-    const sort = e.target.value;
-    this.setState({
-      sort: e.target.value,
-      products: this.state.products.slice().sort((a, b) => (
-        sort === "lowest"
-          ? a.price > b.price
-            ? 1
-            : -1
-          : sort === "highest"
-            ? a.price < b.price
-              ? 1
-              : -1
-            : a._id > b._id
-              ? 1
-              : -1
-      ))
-    })
-  }
+  // sortProduct = (e) => {
+  //   const sort = e.target.value;
+  //   this.setState({
+  //     sort: e.target.value,
+  //     products: this.state.products.slice().sort((a, b) => (
+  //       sort === "lowest"
+  //         ? a.price > b.price
+  //           ? 1
+  //           : -1
+  //         : sort === "highest"
+  //           ? a.price < b.price
+  //             ? 1
+  //             : -1
+  //           : a._id > b._id
+  //             ? 1
+  //             : -1
+  //     ))
+  //   })
+  // }
 
-  filterProduct = (e) => {
-    if (e.target.value == "") {
-      this.setState({
-        size: e.target.value,
-        products: data.products
-      })
-    } else {
-      this.setState({
-        size: e.target.value,
-        products: data.products.filter(product => product.availableSize.indexOf(e.target.value) >= 0)
-      })
-    }
-  }
+  // filterProduct = (e) => {
+  //   if (e.target.value == "") {
+  //     this.setState({
+  //       size: e.target.value,
+  //       products: data.products
+  //     })
+  //   } else {
+  //     this.setState({
+  //       size: e.target.value,
+  //       products: data.products.filter(product => product.availableSize.indexOf(e.target.value) >= 0)
+  //     })
+  //   }
+  // }
   render() {
     return (
       <Provider store={store}>
@@ -88,8 +83,8 @@ class App extends Component {
           <main>
             <div className="content">
               <div className="main">
-                <Filter count={this.state.products.length} sort={this.state.sort} size={this.state.size} filterProduct={this.filterProduct} sortProduct={this.sortProduct} />
-                <Products products={this.state.products} addToCart={this.addTocart} />
+                <Filter />
+                <Products addToCart={this.addTocart} />
               </div>
               <div className="side">
                 <Cart cartItems={this.state.cartItems} createOrder={this.createOrder} removeItem={this.removeItem} />
