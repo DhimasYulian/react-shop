@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade'
+import { connect } from 'react-redux';
+import { removeFromCart } from '../action/cartAction';
 
-export default class Cart extends Component {
+class Cart extends Component {
     constructor() {
         super();
         this.state = {
@@ -25,7 +27,7 @@ export default class Cart extends Component {
         this.props.createOrder(order);
     }
     render() {
-        const { cartItems, removeItem } = this.props;
+        const { cartItems, removeFromCart } = this.props;
         return (
             <div>
                 {cartItems.length === 0 ? <div className="cart cart-header">Your Cart is Empty</div> :
@@ -44,7 +46,7 @@ export default class Cart extends Component {
                                             <div>{item.title}</div>
                                             <div className="right">
                                                 {item.count} x ${item.price}
-                                                <button className="button remove" onClick={() => removeItem(item)}>Remove</button>
+                                                <button className="button remove" onClick={() => removeFromCart(item)}>Remove</button>
                                             </div>
                                         </div>
                                     </li>
@@ -64,7 +66,7 @@ export default class Cart extends Component {
                                 </div>
                             </div>
                             {this.state.showCheckout && (
-                                <Fade right cascade>
+                                <Fade bottom cascade>
                                     <div className="cart">
                                         <form onSubmit={this.createOrder}>
                                             <ul className="form-container">
@@ -95,3 +97,9 @@ export default class Cart extends Component {
         )
     }
 }
+
+export default connect((state) => ({
+    cartItems: state.cart.cartItems
+}),
+    { removeFromCart }
+)(Cart)
